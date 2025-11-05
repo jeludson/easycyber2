@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EasyCyber IT Agency services - Website design, E-commerce, Custom web apps, and SEO">
+  <title>EasyCyber | Services</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+  <div class="glow-bg"></div>
+
+  <header class="hero" role="banner">
+    <h1>💼 Our Services</h1>
+    <p>At <span class="neon">EasyCyber</span>, we bring your ideas to life with cutting-edge tech.</p>
+  </header>
+
+  <nav class="nav-bar" role="navigation" aria-label="Main navigation">
+    <a href="/">Home</a>
+    <a href="/services" class="active">Services</a>
+    <a href="/portfolio">Portfolio</a>
+    <a href="/contact">Contact</a>
+  </nav>
+
+  <main>
+    <section class="services" aria-labelledby="services-heading">
+      <h2 id="services-heading" class="sr-only">Our Services</h2>
+      <article class="card">
+        <h3>🌐 Website Design</h3>
+        <p>Modern, mobile-friendly websites that glow with creativity.</p>
+      </article>
+      <article class="card">
+        <h3>🛒 E-Commerce</h3>
+        <p>Full online stores with secure payments and real-time tracking.</p>
+      </article>
+      <article class="card">
+        <h3>⚙️ Custom Web Apps</h3>
+        <p>Flask & Python-powered web apps built for performance.</p>
+      </article>
+      <article class="card">
+        <h3>📈 SEO & Marketing</h3>
+        <p>Make your business shine on Google and attract real clients.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>© 2025 EasyCyber | Designed by Jeludson with 💙 & Neon</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EasyCyber IT Agency portfolio - View our recent web development projects">
+  <title>EasyCyber | Portfolio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+  <div class="glow-bg"></div>
+
+  <header class="hero" role="banner">
+    <h1>🚀 Our Portfolio</h1>
+    <p>Take a look at some glowing projects made by <span class="neon">EasyCyber</span>.</p>
+  </header>
+
+  <nav class="nav-bar" role="navigation" aria-label="Main navigation">
+    <a href="/">Home</a>
+    <a href="/services">Services</a>
+    <a href="/portfolio" class="active">Portfolio</a>
+    <a href="/contact">Contact</a>
+  </nav>
+
+  <main>
+    <section class="portfolio" aria-labelledby="portfolio-heading">
+      <h2 id="portfolio-heading" class="sr-only">Our Portfolio Projects</h2>
+      <article class="project">
+        <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #00f6ff33, #8a2be233); display: flex; align-items: center; justify-content: center; color: #00f6ff; font-size: 3em;" aria-hidden="true">🛒</div>
+        <h3>GlowMart</h3>
+        <p>A futuristic e-commerce store for local businesses.</p>
+      </article>
+      <article class="project">
+        <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #ff00ff33, #00f6ff33); display: flex; align-items: center; justify-content: center; color: #ff00ff; font-size: 3em;" aria-hidden="true">✨</div>
+        <h3>NeonPortfolio</h3>
+        <p>Personal portfolio design for creative developers.</p>
+      </article>
+      <article class="project">
+        <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #8a2be233, #00f6ff33); display: flex; align-items: center; justify-content: center; color: #8a2be2; font-size: 3em;" aria-hidden="true">🏙️</div>
+        <h3>CityLights</h3>
+        <p>Website for a startup that lights up smart cities.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>© 2025 EasyCyber | All rights reserved</p>
+  </footer>
+</body>
+</html>

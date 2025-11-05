@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #0a0a0a, #000);
+  color: white;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Neon Background Glow */
+.glow-bg::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, #00f6ff, #8a2be2, #ff00ff, #00f6ff);
+  filter: blur(150px);
+  opacity: 0.2;
+  animation: spin 20s linear infinite;
+  z-index: -1;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Header */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+}
+.hero h1 {
+  font-size: 3em;
+  text-shadow: 0 0 15px #00f6ff, 0 0 30px #8a2be2;
+}
+.hero p {
+  font-size: 1.2em;
+  color: #ccc;
+}
+.neon {
+  color: #00f6ff;
+  text-shadow: 0 0 10px #00f6ff, 0 0 20px #00f6ff;
+}
+
+/* Neon Button */
+.btn-glow {
+  display: inline-block;
+  padding: 12px 30px;
+  margin-top: 25px;
+  background: transparent;
+  border: 2px solid #00f6ff;
+  border-radius: 50px;
+  color: #00f6ff;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 0 15px #00f6ff;
+  transition: 0.3s;
+}
+.btn-glow:hover {
+  background: #00f6ff;
+  color: black;
+  box-shadow: 0 0 40px #00f6ff, 0 0 80px #00f6ff;
+}
+.spark {
+  position: fixed;
+  bottom: 0;
+  width: 5px;
+  height: 5px;
+  background: #00f6ff;
+  box-shadow: 0 0 10px #00f6ff, 0 0 20px #8a2be2, 0 0 40px #ff00ff;
+  border-radius: 50%;
+  animation: rise linear forwards;
+}
+@keyframes rise {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+
+/* Nav Bar */
+.nav-bar {
+  text-align: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.nav-bar a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.nav-bar a:hover {
+  color: #00f6ff;
+  text-shadow: 0 0 10px #00f6ff;
+}
+.nav-bar a.active {
+  color: #00f6ff;
+  text-shadow: 0 0 10px #00f6ff, 0 0 20px #00f6ff;
+  font-weight: 600;
+}
+
+/* About Section */
+.about {
+  text-align: center;
+  padding: 60px 20px;
+}
+.about h2 {
+  text-shadow: 0 0 15px #ff00ff, 0 0 30px #8a2be2;
+}
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 60px 40px;
+}
+.services h2 {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.services .card h3 {
+  margin-top: 0;
+  color: #00f6ff;
+  text-shadow: 0 0 10px #00f6ff;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 246, 255, 0.2);
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 246, 255, 0.2);
+  transition: 0.4s;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 40px #00f6ff, 0 0 80px #8a2be2;
+}
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 60px 40px;
+}
+.project {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 246, 255, 0.2);
+  transition: 0.4s;
+}
+.project:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 50px #00f6ff, 0 0 100px #8a2be2;
+}
+.project img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  background: linear-gradient(135deg, #00f6ff33, #8a2be233);
+}
+.project h3 {
+  margin: 15px;
+  color: #00f6ff;
+}
+.project p {
+  margin: 0 15px 20px;
+  color: #bbb;
+}
+.contact-form {
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px;
+}
+.contact-form form {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 246, 255, 0.2);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 246, 255, 0.1);
+  width: 90%;
+  max-width: 500px;
+}
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 1em;
+}
+.contact-form button {
+  width: 100%;
+}
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #999;
+  font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2em;
+  }
+  .hero p {
+    font-size: 1em;
+  }
+  .nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .nav-bar a {
+    margin: 5px;
+    font-size: 0.9em;
+  }
+  .services, .portfolio {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+  }
+  .card, .project {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  .contact-form form {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 80px 15px;
+  }
+  .hero h1 {
+    font-size: 1.5em;
+  }
+  .btn-glow {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+}
+
+/* Screen reader only - for accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
