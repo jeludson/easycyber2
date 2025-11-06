@@ -13,21 +13,23 @@ app = Flask(__name__)
 
 # ----- Database helpers -----
 def is_postgres():
-    return bool(os.getenv("DATABASE_URL"))
+    # Support both DATABASE_URL and Vercel/Neon style POSTGRES_URL
+    return bool(os.getenv("DATABASE_URL") or os.getenv("POSTGRES_URL"))
 
 
 def get_connection():
-    """Return a DB connection to SQLite (local) or Postgres (when DATABASE_URL is set)."""
+    """Return a DB connection to SQLite (local) or Postgres (when DATABASE_URL/POSTGRES_URL is set)."""
     if is_postgres():
         if psycopg2 is None:
-            raise RuntimeError("psycopg2 not available but DATABASE_URL is set")
-        dsn = os.getenv("DATABASE_URL")
-        # Heroku URLs may start with postgres:// — psycopg2 prefers postgresql://
+            raise RuntimeError("psycopg2 not available but DATABASE_URL/POSTGRES_URL is set")
+        dsn = os.getenv("DATABASE_URL") or os.getenv("POSTGRES_URL")
+        # Some providers use postgres:// — psycopg2 prefers postgresql://
         if dsn.startswith("postgres://"):
             dsn = dsn.replace("postgres://", "postgresql://", 1)
         return psycopg2.connect(dsn)
-    # Default to SQLite file
-    return sqlite3.connect("database.db")
+    # Default to SQLite file. On serverless (e.g., Vercel), use /tmp which is writable but ephemeral.
+    sqlite_path = os.getenv("SQLITE_PATH") or ("/tmp/database.db" if os.getenv("VERCEL") else "database.db")
+    return sqlite3.connect(sqlite_path)
 
 
 def init_db():
