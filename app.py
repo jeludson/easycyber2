@@ -10,6 +10,9 @@ except Exception:
 
 app = Flask(__name__)
 
+@app.route('/googleXXXXXX.html')
+def verify():
+    return send_from_directory('static', 'googleXXXXXX.html')
 
 # ----- Database helpers -----
 def is_postgres():
@@ -124,3 +127,4 @@ def api_contact():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
